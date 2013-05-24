@@ -5,39 +5,35 @@ class iDEALConnector_Validation_EntityValidator
     {
         $className = get_class($request);
 
-        if ($className === 'iDEALConnector_Entities_DirectoryRequest')
+        switch ($className)
         {
-            /* @var $request iDEALConnector_Entities_DirectoryRequest */
-            $this->validateMerchant($request->getMerchant());
-        }
-        else if ($className === 'iDEALConnector_Entities_AcquirerTransactionRequest')
-        {
-            /* @var $request iDEALConnector_Entities_AcquirerTransactionRequest */
-            $this->validateAcquirerTransactionRequest($request);
-        }
-        else if ($className === 'iDEALConnector_Entities_AcquirerStatusRequest')
-        {
-            /* @var $request iDEALConnector_Entities_AcquirerStatusRequest */
-            $this->validateAcquirerStatusRequest($request);
-        }
-        else if ($className === 'iDEALConnector_Entities_DirectoryResponse')
-        {
-            /* @var $request iDEALConnector_Entities_DirectoryResponse */
-            $this->validateDirectoryResponse($request);
-        }
-        else if ($className === 'iDEALConnector_Entities_AcquirerTransactionResponse')
-        {
-            /* @var $request iDEALConnector_Entities_AcquirerTransactionResponse */
-            $this->validateAcquirerTransactionResponse($request);
-        }
-        else if ($className === 'iDEALConnector_Entities_AcquirerStatusResponse')
-        {
-            /* @var $request iDEALConnector_Entities_AcquirerStatusResponse */
-            $this->validateAcquirerStatusResponse($request);
-        }
-        else
-        {
-            throw new iDEALConnector_Exceptions_ValidationException('Given object type could not be validated.');
+            case 'iDEALConnector_Entities_DirectoryRequest':
+                    /* @var $request iDEALConnector_Entities_DirectoryRequest */
+                    $this->validateMerchant($request->getMerchant());
+                break;
+            case 'iDEALConnector_Entities_AcquirerTransactionRequest':
+                    /* @var $request iDEALConnector_Entities_AcquirerTransactionRequest */
+                    $this->validateAcquirerTransactionRequest($request);
+                break;
+            case 'iDEALConnector_Entities_AcquirerStatusRequest':
+                    /* @var $request iDEALConnector_Entities_AcquirerStatusRequest */
+                    $this->validateAcquirerStatusRequest($request);
+                break;
+            case 'iDEALConnector_Entities_DirectoryResponse':
+                    /* @var $request iDEALConnector_Entities_DirectoryResponse */
+                    $this->validateDirectoryResponse($request);
+                break;
+            case 'iDEALConnector_Entities_AcquirerTransactionResponse':
+                    /* @var $request iDEALConnector_Entities_AcquirerTransactionResponse */
+                    $this->validateAcquirerTransactionResponse($request);
+                break;
+            case 'iDEALConnector_Entities_AcquirerStatusResponse':
+                    /* @var $request iDEALConnector_Entities_AcquirerStatusResponse */
+                    $this->validateAcquirerStatusResponse($request);
+                break;
+            default:
+                    throw new iDEALConnector_Exceptions_ValidationException('Given object type could not be validated.');
+                break;
         }
     }
 
