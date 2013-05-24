@@ -54,6 +54,7 @@ class iDEALConnector
 
     /**
      * This is a conveninence method to create an instance of iDEALConnector using the default implementations of IConnectorConfiguration and IConnector Log
+     *
      * @param string $configurationPath The path of your config.conf file
      * @return iDEALConnector
      * @static
@@ -67,7 +68,7 @@ class iDEALConnector
 
 
     /**
-     * Get directory listing.
+     * Get directory listing
      *
      * @return iDEALConnector_Entities_DirectoryResponse
      * @throws iDEALConnector_Exceptions_SerializationException
@@ -291,7 +292,9 @@ class iDEALConnector
     }
 
     /*
-     * Returns the assigned configuration.
+     * Returns the assigned configuration array
+     *
+     * @return array
      */
     public function getConfiguration()
     {

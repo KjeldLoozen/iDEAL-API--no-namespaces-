@@ -94,7 +94,6 @@ class iDEALConnector_Validation_EntityValidator
         {
             throw new iDEALConnector_Exceptions_ValidationException('Merchant.merchantReturnURL length is to large.');
         }
-
     }
 
     private function validateTransaction(iDEALConnector_Entities_Transaction $transaction)
@@ -149,7 +148,6 @@ class iDEALConnector_Validation_EntityValidator
         {
             throw new iDEALConnector_Exceptions_ValidationException('Transaction.purchaseId does not match format.');
         }
-
     }
 
     private function validateDirectoryResponse(iDEALConnector_Entities_DirectoryResponse $response)
@@ -199,7 +197,6 @@ class iDEALConnector_Validation_EntityValidator
             throw new iDEALConnector_Exceptions_ValidationException('Acquirer.acquirerID does not match format.');
         }
 
-
         $length = strlen($response->getIssuerAuthenticationURL());
 
         if ($length > 512)
@@ -234,7 +231,6 @@ class iDEALConnector_Validation_EntityValidator
         {
             throw new iDEALConnector_Exceptions_ValidationException('Transaction.purchaseID does not match format.');
         }
-
     }
 
     private function validateAcquirerStatusResponse(iDEALConnector_Entities_AcquirerStatusResponse $response)
