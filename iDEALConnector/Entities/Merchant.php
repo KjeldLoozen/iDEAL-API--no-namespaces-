@@ -39,7 +39,7 @@ class iDEALConnector_Entities_Merchant
     }
 
     /**
-     * @return int
+     * @return integer
      */
     public function getSubID()
     {

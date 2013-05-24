@@ -33,21 +33,27 @@ class iDEALConnector_Configuration_DefaultConfiguration implements iDEALConnecto
         $file = fopen($path,'r');
         $config_data = array();
 
-        if ($file) {
-            while (!feof($file)) {
+        if ($file)
+        {
+            while (!feof($file))
+            {
                 $buffer = fgets($file);
 
                 /* @var $buffer array() */
                 $buffer = trim($buffer);
 
-                if (!empty($buffer)) {
-
+                if (!empty($buffer))
+                {
                     if ($buffer[0] != '#')
                     {
                         $pos = strpos($buffer, '=');
-                        if ($pos > 0 && $pos != (strlen($buffer) - 1)) {
+
+                        if ($pos > 0 && $pos != (strlen($buffer) - 1))
+                        {
                             $dumb = trim(substr($buffer, 0, $pos));
-                            if (!empty($dumb)) {
+
+                            if (!empty($dumb))
+                            {
                                 // Populate the configuration array
                                 $config_data[strtoupper(substr($buffer, 0, $pos))] = substr($buffer, $pos + 1);
                             }
@@ -77,8 +83,8 @@ class iDEALConnector_Configuration_DefaultConfiguration implements iDEALConnecto
 
         if(!empty($config_data['ACQUIRERURL']))
         {
-            $this->acquirerDirectoryURL = $config_data['ACQUIRERURL'];
-            $this->acquirerStatusURL = $config_data['ACQUIRERURL'];
+            $this->acquirerDirectoryURL   = $config_data['ACQUIRERURL'];
+            $this->acquirerStatusURL      = $config_data['ACQUIRERURL'];
             $this->acquirerTransactionURL = $config_data['ACQUIRERURL'];
         }
 
@@ -240,7 +246,7 @@ class iDEALConnector_Configuration_DefaultConfiguration implements iDEALConnecto
     }
 
     /**
-     * @return int
+     * @return integer
      */
     public function getLogLevel()
     {

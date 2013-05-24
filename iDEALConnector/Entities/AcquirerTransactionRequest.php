@@ -6,9 +6,9 @@ class iDEALConnector_Entities_AcquirerTransactionRequest extends iDEALConnector_
     private $transaction;
 
     /**
-     * @param string $issuerID
-     * @param Merchant $merchant
-     * @param Transaction $transaction
+     * @param string                               $issuerID
+     * @param iDEALConnector_Entities_Merchant     $merchant
+     * @param iDEALConnector_Entities_Transaction  $transaction
      */
     public function __construct($issuerID, iDEALConnector_Entities_Merchant $merchant, iDEALConnector_Entities_Transaction $transaction)
     {
@@ -28,7 +28,7 @@ class iDEALConnector_Entities_AcquirerTransactionRequest extends iDEALConnector_
     }
 
     /**
-     * @return Merchant
+     * @return iDEALConnector_Entities_Merchant
      */
     public function getMerchant()
     {
@@ -36,7 +36,7 @@ class iDEALConnector_Entities_AcquirerTransactionRequest extends iDEALConnector_
     }
 
     /**
-     * @return Transaction
+     * @return iDEALConnector_Entities_Transaction
      */
     public function getTransaction()
     {

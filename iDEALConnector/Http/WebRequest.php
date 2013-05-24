@@ -32,7 +32,13 @@ class iDEALConnector_Http_WebRequest
         }
 
         $output = curl_exec($request);
-        die(var_dump('iDEALConnector_Http_WebRequest::Post()', $output, curl_error($request)));
+        $error  = curl_error($request);
+
+        if (!empty($error))
+        {
+            throw new iDEALConnector_Exceptions_iDEALException($error);
+        }
+
         curl_close($request);
 
         return $output;

@@ -9,7 +9,7 @@ class iDEALConnector_Entities_Country
 
     /**
      * @param string $countryNames
-     * @param Issuer[] $issuers
+     * @param array  $issuers      Array of iDEALConnector_Entities_Issuer
      * @throws InvalidArgumentException
      */
     public function __construct($countryNames, $issuers)
@@ -37,7 +37,7 @@ class iDEALConnector_Entities_Country
     }
 
     /**
-     * @return Issuer[]
+     * @return array
      */
     public function getIssuers()
     {

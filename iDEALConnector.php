@@ -101,25 +101,37 @@ class iDEALConnector
         }
         catch(iDEALConnector_Exceptions_iDEALException $ex)
         {
-            $this->log->logErrorResponse($ex);
+            if ($this->log !== null)
+            {
+                $this->log->logErrorResponse($ex);
+            }
 
             throw $ex;
         }
         catch(iDEALConnector_Exceptions_ValidationException $ex)
         {
-            $this->log->logException($ex);
+            if ($this->log !== null)
+            {
+                $this->log->logException($ex);
+            }
 
             throw $ex;
         }
         catch(iDEALConnector_Exceptions_SerializationException $ex)
         {
-            $this->log->logException($ex);
+            if ($this->log !== null)
+            {
+                $this->log->logException($ex);
+            }
 
             throw $ex;
         }
         catch(iDEALConnector_Exceptions_SecurityException $ex)
         {
-            $this->log->logException($ex);
+            if ($this->log !== null)
+            {
+                $this->log->logException($ex);
+            }
 
             throw $ex;
         }
@@ -170,25 +182,37 @@ class iDEALConnector
         }
         catch(iDEALConnector_Exceptions_iDEALException $iex)
         {
-            $this->log->logErrorResponse($iex);
+            if ($this->log !== null)
+            {
+                $this->log->logErrorResponse($iex);
+            }
 
             throw $iex;
         }
         catch(iDEALConnector_Exceptions_ValidationException $ex)
         {
-            $this->log->logException($ex);
+            if ($this->log !== null)
+            {
+                $this->log->logException($ex);
+            }
 
             throw $ex;
         }
         catch(iDEALConnector_Exceptions_SerializationException $ex)
         {
-            $this->log->logException($ex);
+            if ($this->log !== null)
+            {
+                $this->log->logException($ex);
+            }
 
             throw $ex;
         }
         catch(iDEALConnector_Exceptions_SecurityException $ex)
         {
-            $this->log->logException($ex);
+            if ($this->log !== null)
+            {
+                $this->log->logException($ex);
+            }
 
             throw $ex;
         }
@@ -230,25 +254,37 @@ class iDEALConnector
         }
         catch(iDEALConnector_Exceptions_iDEALException $iex)
         {
-            $this->log->logErrorResponse($iex);
+            if ($this->log !== null)
+            {
+                $this->log->logErrorResponse($iex);
+            }
 
             throw $iex;
         }
         catch(iDEALConnector_Exceptions_ValidationException $ex)
         {
-            $this->log->logException($ex);
+            if ($this->log !== null)
+            {
+                $this->log->logException($ex);
+            }
 
             throw $ex;
         }
         catch(iDEALConnector_Exceptions_SerializationException $ex)
         {
-            $this->log->logException($ex);
+            if ($this->log !== null)
+            {
+                $this->log->logException($ex);
+            }
 
             throw $ex;
         }
         catch(iDEALConnector_Exceptions_SecurityException $ex)
         {
-            $this->log->logException($ex);
+            if ($this->log !== null)
+            {
+                $this->log->logException($ex);
+            }
 
             throw $ex;
         }
@@ -307,4 +343,3 @@ class iDEALConnector
         return $this->serializer->deserialize($doc);
     }
 }
-

@@ -9,10 +9,10 @@ class iDEALConnector_Entities_AcquirerTransactionResponse extends iDEALConnector
     private $purchaseID;
 
     /**
-     * @param string $acquirerID
-     * @param string $issuerAuthenticationURL
-     * @param string $purchaseID
-     * @param string $transactionID
+     * @param string   $acquirerID
+     * @param string   $issuerAuthenticationURL
+     * @param string   $purchaseID
+     * @param string   $transactionID
      * @param DateTime $transactionTimestamp
      * @param DateTime $createdTimestamp
      * @throws InvalidArgumentException
@@ -23,22 +23,22 @@ class iDEALConnector_Entities_AcquirerTransactionResponse extends iDEALConnector
 
         if(!is_string($acquirerID))
         {
-            throw new InvalidArgumentException("Parameter 'acquirerID' must be of type string.");
+            throw new InvalidArgumentException('Parameter \'acquirerID\' must be of type string.');
         }
 
         if(!is_string($issuerAuthenticationURL))
         {
-            throw new InvalidArgumentException("Parameter 'issuerAuthenticationURL' must be of type string.");
+            throw new InvalidArgumentException('Parameter \'issuerAuthenticationURL\' must be of type string.');
         }
 
         if(!is_string($purchaseID))
         {
-            throw new InvalidArgumentException("Parameter 'purchaseID' must be of type string.");
+            throw new InvalidArgumentException('Parameter \'purchaseID\' must be of type string.');
         }
 
         if(!is_string($transactionID))
         {
-            throw new InvalidArgumentException("Parameter 'transactionID' must be of type string.");
+            throw new InvalidArgumentException('Parameter \'transactionID\' must be of type string.');
         }
 
         $this->acquirerID              = $acquirerID;

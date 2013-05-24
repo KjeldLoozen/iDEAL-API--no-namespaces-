@@ -30,7 +30,7 @@ class iDEALConnector_Xml_XmlSecurity
 
         if (empty($sig))
         {
-            throw new SecurityException('Cannot locate Signature Node');
+            throw new iDEALConnector_Exceptions_SecurityException('Cannot locate Signature Node');
         }
 
         //$signature->setCanonicalMethod(XMLSecurityDSig::EXC_C14N); //whitespaces are significant

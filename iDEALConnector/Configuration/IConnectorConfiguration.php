@@ -30,7 +30,7 @@ interface iDEALConnector_Configuration_IConnectorConfiguration
     public function getCertificatePath();
 
     /**
-     * @return int
+     * @return integer
      */
     public function getExpirationPeriod();
 
@@ -55,12 +55,12 @@ interface iDEALConnector_Configuration_IConnectorConfiguration
     public function getMerchantReturnURL();
 
     /**
-     * @return int
+     * @return integer
      */
     public function getSubID();
 
     /**
-     * @return int
+     * @return integer
      */
     public function getAcquirerTimeout();
 
