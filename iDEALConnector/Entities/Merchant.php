@@ -15,12 +15,12 @@ class iDEALConnector_Entities_Merchant
      */
     public function __construct($merchantID, $subID, $merchantReturnURL)
     {
-        if(!is_string($merchantID))
+        if (!is_string($merchantID))
         {
             throw new InvalidArgumentException('Parameter \'merchantID\' must be of type string.');
         }
 
-        if(!is_int($subID))
+        if (!is_int($subID))
         {
             throw new InvalidArgumentException('Parameter \'subID\' must be of type integer.');
         }

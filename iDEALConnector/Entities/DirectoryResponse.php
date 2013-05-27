@@ -20,12 +20,12 @@ class iDEALConnector_Entities_DirectoryResponse extends iDEALConnector_Entities_
      */
     public function __construct(DateTime $date, DateTime $directoryDate, $acquirerID, $countries)
     {
-        if(!is_string($acquirerID))
+        if (!is_string($acquirerID))
         {
             throw new InvalidArgumentException('Parameter \'acquirerID\' should be of type string.');
         }
 
-        if(!is_array($countries))
+        if (!is_array($countries))
         {
             throw new InvalidArgumentException('Parameter \'countries\' should be an array.');
         }

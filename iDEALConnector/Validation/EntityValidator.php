@@ -39,7 +39,7 @@ class iDEALConnector_Validation_EntityValidator
 
     private function validateAcquirerStatusRequest(iDEALConnector_Entities_AcquirerStatusRequest $input)
     {
-        if(strlen($input->getTransactionID()) !== 16)
+        if (strlen($input->getTransactionID()) !== 16)
         {
             throw new iDEALConnector_Exceptions_ValidationException('Transaction.transactionID length not 16.');
         }

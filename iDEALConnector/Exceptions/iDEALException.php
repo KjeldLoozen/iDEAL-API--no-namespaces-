@@ -18,8 +18,8 @@ class iDEALConnector_Exceptions_iDEALException extends iDEALConnector_Exceptions
 
         parent::__construct($message);
 
-        $this->errorCode = $code;
-        $this->errorDetail = $errorDetail;
+        $this->errorCode       = $code;
+        $this->errorDetail     = $errorDetail;
         $this->suggestedAction = $suggestedAction;
         $this->consumerMessage = $consumerMessage;
     }

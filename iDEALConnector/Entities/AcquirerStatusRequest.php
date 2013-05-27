@@ -10,7 +10,7 @@ class iDEALConnector_Entities_AcquirerStatusRequest extends iDEALConnector_Entit
      */
     public function __construct(iDEALConnector_Entities_Merchant $merchant, $transactionID)
     {
-        if(!is_string($transactionID))
+        if (!is_string($transactionID))
         {
             throw new InvalidArgumentException('Parameter \'transactionID\' must be of type string.');
         }

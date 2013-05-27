@@ -40,7 +40,7 @@ class iDEALConnector_Xml_XmlSecurity
         {
             $signature->validateReference();
         }
-        catch(Exception $ex)
+        catch (Exception $ex)
         {
             throw new iDEALConnector_Exceptions_SecurityException('Reference Validation Failed');
         }

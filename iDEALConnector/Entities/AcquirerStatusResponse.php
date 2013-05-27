@@ -33,44 +33,44 @@ class iDEALConnector_Entities_AcquirerStatusResponse extends iDEALConnector_Enti
     {
         parent::__construct($createdTimestamp);
 
-        if(!is_string($acquirerID))
+        if (!is_string($acquirerID))
         {
             throw new InvalidArgumentException('Parameter \'acquirerID\' must be of type string.');
         }
 
-        if(!is_string($transactionID))
+        if (!is_string($transactionID))
         {
             throw new InvalidArgumentException('Parameter \'transactionID\' must be of type string.');
         }
 
-        if(!is_string($status))
+        if (!is_string($status))
         {
             throw new InvalidArgumentException('Parameter \'status\' must be of type string.');
         }
 
         if ($status === self::STATUS_SUCCESS)
         {
-            if(!is_float($amount))
+            if (!is_float($amount))
             {
                 throw new InvalidArgumentException('Parameter \'amount\' must be of type float.');
             }
 
-            if(!is_string($consumerBIC))
+            if (!is_string($consumerBIC))
             {
                 throw new InvalidArgumentException('Parameter \'consumerBIC\' must be of type string.');
             }
 
-            if(!is_string($consumerName))
+            if (!is_string($consumerName))
             {
                 throw new InvalidArgumentException('Parameter \'consumerName\' must be of type string.');
             }
 
-            if(!is_string($consumerIBAN))
+            if (!is_string($consumerIBAN))
             {
                 throw new InvalidArgumentException('Parameter \'consumerIBAN\' must be of type string.');
             }
 
-            if(!is_string($currency))
+            if (!is_string($currency))
             {
                 throw new InvalidArgumentException('Parameter \'currency\' must be of type string.');
             }

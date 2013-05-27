@@ -12,6 +12,7 @@ class iDEALConnector_Entities_DirectoryRequest extends iDEALConnector_Entities_A
     public function __construct(iDEALConnector_Entities_Merchant $merchant)
     {
         parent::__construct();
+
         $this->merchant = $merchant;
     }
 

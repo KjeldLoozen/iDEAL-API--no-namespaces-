@@ -177,9 +177,9 @@ class iDEALConnector_Xml_XmlSerializer
                     $consumerMessage = $nodes->item(0)->nodeValue;
                 }
             }
-            catch(Exception $e)
+            catch (Exception $e)
             {
-                //Pass-through to exception throwing if minimum requirements are not met.
+                // Pass-through to exception throwing if minimum requirements are not met.
             }
         }
 
@@ -225,7 +225,8 @@ class iDEALConnector_Xml_XmlSerializer
         /* @var $nodes DOMNodeList */
         $nodes = $this->getChildren($xml, 'Acquirer');
         /* @var $node DOMElement */
-        $node  = $nodes->item(0);
+        $node = $nodes->item(0);
+
         $acquirerID = $this->getFirstValue($node, 'acquirerID', 'Acquirer.acquirerID');
 
         $nodes = $this->getChildren($xml, 'Directory');
@@ -265,7 +266,7 @@ class iDEALConnector_Xml_XmlSerializer
         /* @var $nodes DOMNodeList */
         $nodes = $this->getChildren($xml, 'Acquirer');
         /* @var $node DOMElement */
-        $node  = $nodes->item(0);
+        $node = $nodes->item(0);
 
         $acquirerID = $this->getFirstValue($node, 'acquirerID', 'Acquirer.acquirerID');
 
@@ -304,7 +305,7 @@ class iDEALConnector_Xml_XmlSerializer
         /* @var $nodes DOMNodeList */
         $nodes = $this->getChildren($xml, 'Acquirer');
         /* @var $node DOMElement */
-        $node  = $nodes->item(0);
+        $node = $nodes->item(0);
 
         $acquirerID = $this->getFirstValue($node, 'acquirerID','Acquirer.acquirerID');
 

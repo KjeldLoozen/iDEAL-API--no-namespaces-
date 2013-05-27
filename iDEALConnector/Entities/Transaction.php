@@ -24,32 +24,32 @@ class iDEALConnector_Entities_Transaction
      */
     public function __construct($amount, $description, $entranceCode, $expirationPeriod, $purchaseID, $currency = 'EUR', $language = 'nl')
     {
-        if(!is_float($amount))
+        if (!is_float($amount))
         {
             throw new InvalidArgumentException('Parameter \'amount\' must be of type decimal.');
         }
 
-        if(!is_string($description))
+        if (!is_string($description))
         {
             throw new InvalidArgumentException('Parameter \'description\' must be of type string.');
         }
 
-        if(!is_string($entranceCode))
+        if (!is_string($entranceCode))
         {
             throw new InvalidArgumentException('Parameter \'entranceCode\' must be of type string.');
         }
 
-        if(!is_int($expirationPeriod))
+        if (!is_int($expirationPeriod))
         {
             throw new InvalidArgumentException('Parameter \'expirationPeriod\' must be of type integer.');
         }
 
-        if(!is_string($language))
+        if (!is_string($language))
         {
             throw new InvalidArgumentException('Parameter \'language\' must be of type string.');
         }
 
-        if(!is_string($purchaseID))
+        if (!is_string($purchaseID))
         {
             throw new InvalidArgumentException('Parameter \'purchaseId\' must be of type string.');
         }

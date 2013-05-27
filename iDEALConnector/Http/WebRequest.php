@@ -33,6 +33,7 @@ class iDEALConnector_Http_WebRequest
 
         $output = curl_exec($request);
         $error  = curl_error($request);
+            die(var_dump($error, $output));
 
         if (!empty($error))
         {

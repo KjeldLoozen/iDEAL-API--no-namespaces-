@@ -14,12 +14,12 @@ class iDEALConnector_Entities_Country
      */
     public function __construct($countryNames, $issuers)
     {
-        if(!is_array($issuers))
+        if (!is_array($issuers))
         {
             throw new InvalidArgumentException('Parameter \'issuers\' must be array.');
         }
 
-        if(!is_string($countryNames))
+        if (!is_string($countryNames))
         {
             throw new InvalidArgumentException('Parameter \'countryNames\' must be of type string.');
         }

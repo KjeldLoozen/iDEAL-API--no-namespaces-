@@ -21,22 +21,22 @@ class iDEALConnector_Entities_AcquirerTransactionResponse extends iDEALConnector
     {
         parent::__construct($createdTimestamp);
 
-        if(!is_string($acquirerID))
+        if (!is_string($acquirerID))
         {
             throw new InvalidArgumentException('Parameter \'acquirerID\' must be of type string.');
         }
 
-        if(!is_string($issuerAuthenticationURL))
+        if (!is_string($issuerAuthenticationURL))
         {
             throw new InvalidArgumentException('Parameter \'issuerAuthenticationURL\' must be of type string.');
         }
 
-        if(!is_string($purchaseID))
+        if (!is_string($purchaseID))
         {
             throw new InvalidArgumentException('Parameter \'purchaseID\' must be of type string.');
         }
 
-        if(!is_string($transactionID))
+        if (!is_string($transactionID))
         {
             throw new InvalidArgumentException('Parameter \'transactionID\' must be of type string.');
         }

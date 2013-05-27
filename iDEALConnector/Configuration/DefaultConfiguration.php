@@ -65,39 +65,39 @@ class iDEALConnector_Configuration_DefaultConfiguration implements iDEALConnecto
 
         fclose($file);
 
-        if(!empty($config_data['MERCHANTID']))
+        if (!empty($config_data['MERCHANTID']))
         {
             $this->merchantID = $config_data['MERCHANTID'];
         }
 
-        if(!empty($config_data['SUBID']))
+        if (!empty($config_data['SUBID']))
         {
             $this->subID = intval($config_data['SUBID']);
         }
 
-        if(!empty($config_data['MERCHANTRETURNURL']))
+        if (!empty($config_data['MERCHANTRETURNURL']))
         {
             $this->returnURL = $config_data['MERCHANTRETURNURL'];
         }
 
 
-        if(!empty($config_data['ACQUIRERURL']))
+        if (!empty($config_data['ACQUIRERURL']))
         {
             $this->acquirerDirectoryURL   = $config_data['ACQUIRERURL'];
             $this->acquirerStatusURL      = $config_data['ACQUIRERURL'];
             $this->acquirerTransactionURL = $config_data['ACQUIRERURL'];
         }
 
-        if(!empty($config_data['ACQUIRERTIMEOUT']))
+        if (!empty($config_data['ACQUIRERTIMEOUT']))
         {
             $this->timeout = intval($config_data['ACQUIRERTIMEOUT']);
         }
 
-        if(!empty($config_data['EXPIRATIONPERIOD']))
+        if (!empty($config_data['EXPIRATIONPERIOD']))
         {
             $this->expirationPeriod = 60;
 
-            if($config_data['EXPIRATIONPERIOD'] !== 'PT1H')
+            if ($config_data['EXPIRATIONPERIOD'] !== 'PT1H')
             {
                 $value = substr($config_data['EXPIRATIONPERIOD'], 2, strlen($config_data['EXPIRATIONPERIOD']) - 3);
 
@@ -108,42 +108,42 @@ class iDEALConnector_Configuration_DefaultConfiguration implements iDEALConnecto
             }
         }
 
-        if(!empty($config_data['CERTIFICATE0']))
+        if (!empty($config_data['CERTIFICATE0']))
         {
             $this->acquirerCertificate = $config_data['CERTIFICATE0'];
         }
 
-        if(!empty($config_data['PRIVATECERT']))
+        if (!empty($config_data['PRIVATECERT']))
         {
             $this->certificate = $config_data['PRIVATECERT'];
         }
 
-        if(!empty($config_data['PRIVATEKEY']))
+        if (!empty($config_data['PRIVATEKEY']))
         {
             $this->privateKey = $config_data['PRIVATEKEY'];
         }
 
-        if(!empty($config_data['PRIVATEKEYPASS']))
+        if (!empty($config_data['PRIVATEKEYPASS']))
         {
             $this->passphrase = $config_data['PRIVATEKEYPASS'];
         }
 
-        if(!empty($config_data['PROXY']))
+        if (!empty($config_data['PROXY']))
         {
             $this->proxy = $config_data['PROXY'];
         }
 
-        if(!empty($config_data['PROXYACQURL']))
+        if (!empty($config_data['PROXYACQURL']))
         {
             $this->proxyUrl = $config_data['PROXYACQURL'];
         }
 
-        if(!empty($config_data['LOGFILE']))
+        if (!empty($config_data['LOGFILE']))
         {
             $this->logFile = $config_data['LOGFILE'];
         }
 
-        if(!empty($config_data['TRACELEVEL']))
+        if (!empty($config_data['TRACELEVEL']))
         {
             $level = strtolower($config_data['TRACELEVEL']);
 

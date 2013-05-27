@@ -16,11 +16,21 @@ class iDEALConnector
     /**
      * Constructs an instance of iDEALConnector.
      *
-     * @param iDEALConnector_Configuration_IConnectorConfiguration  $configuration  An instance of a implementation of IConnectorConfiguration
-     * @param iDEALConnector_Log_IConnectorLog                      $log            An instance of a implementation of IConnectorLog
+     * @param mixed $configuration  An instance of a implementation of IConnectorConfiguration or a string with a path
+     * @param mixed $log            An instance of a implementation of IConnectorLog
      */
-    public function __construct(iDEALConnector_Configuration_IConnectorConfiguration $configuration, iDEALConnector_Log_IConnectorLog $log = null)
+    public function __construct($configuration, iDEALConnector_Log_IConnectorLog $log = null)
     {
+        if (is_object($configuration) === false || !($configuration instanceof iDEALConnector_Configuration_IConnectorConfiguration))
+        {
+            if (is_string($configuration) === false || $configuration === '' || file_exists($configuration) === false)
+            {
+                throw new iDEALConnector_Exceptions_iDEALException('Wrong value passed as configuration data');
+            }
+
+            $configuration = new iDEALConnector_Configuration_DefaultConfiguration($configuration);
+        }
+
         $this->log           = $log;
         $this->configuration = $configuration;
         date_default_timezone_set('UTC');
@@ -100,7 +110,7 @@ class iDEALConnector
 
             return $response;
         }
-        catch(iDEALConnector_Exceptions_iDEALException $ex)
+        catch (iDEALConnector_Exceptions_iDEALException $ex)
         {
             if ($this->log !== null)
             {
@@ -109,7 +119,7 @@ class iDEALConnector
 
             throw $ex;
         }
-        catch(iDEALConnector_Exceptions_ValidationException $ex)
+        catch (iDEALConnector_Exceptions_ValidationException $ex)
         {
             if ($this->log !== null)
             {
@@ -118,7 +128,7 @@ class iDEALConnector
 
             throw $ex;
         }
-        catch(iDEALConnector_Exceptions_SerializationException $ex)
+        catch (iDEALConnector_Exceptions_SerializationException $ex)
         {
             if ($this->log !== null)
             {
@@ -127,7 +137,7 @@ class iDEALConnector
 
             throw $ex;
         }
-        catch(iDEALConnector_Exceptions_SecurityException $ex)
+        catch (iDEALConnector_Exceptions_SecurityException $ex)
         {
             if ($this->log !== null)
             {
@@ -181,7 +191,7 @@ class iDEALConnector
 
             return $response;
         }
-        catch(iDEALConnector_Exceptions_iDEALException $iex)
+        catch (iDEALConnector_Exceptions_iDEALException $iex)
         {
             if ($this->log !== null)
             {
@@ -190,7 +200,7 @@ class iDEALConnector
 
             throw $iex;
         }
-        catch(iDEALConnector_Exceptions_ValidationException $ex)
+        catch (iDEALConnector_Exceptions_ValidationException $ex)
         {
             if ($this->log !== null)
             {
@@ -199,7 +209,7 @@ class iDEALConnector
 
             throw $ex;
         }
-        catch(iDEALConnector_Exceptions_SerializationException $ex)
+        catch (iDEALConnector_Exceptions_SerializationException $ex)
         {
             if ($this->log !== null)
             {
@@ -208,7 +218,7 @@ class iDEALConnector
 
             throw $ex;
         }
-        catch(iDEALConnector_Exceptions_SecurityException $ex)
+        catch (iDEALConnector_Exceptions_SecurityException $ex)
         {
             if ($this->log !== null)
             {
@@ -253,7 +263,7 @@ class iDEALConnector
 
             return $response;
         }
-        catch(iDEALConnector_Exceptions_iDEALException $iex)
+        catch (iDEALConnector_Exceptions_iDEALException $iex)
         {
             if ($this->log !== null)
             {
@@ -262,7 +272,7 @@ class iDEALConnector
 
             throw $iex;
         }
-        catch(iDEALConnector_Exceptions_ValidationException $ex)
+        catch (iDEALConnector_Exceptions_ValidationException $ex)
         {
             if ($this->log !== null)
             {
@@ -271,7 +281,7 @@ class iDEALConnector
 
             throw $ex;
         }
-        catch(iDEALConnector_Exceptions_SerializationException $ex)
+        catch (iDEALConnector_Exceptions_SerializationException $ex)
         {
             if ($this->log !== null)
             {
@@ -280,7 +290,7 @@ class iDEALConnector
 
             throw $ex;
         }
-        catch(iDEALConnector_Exceptions_SecurityException $ex)
+        catch (iDEALConnector_Exceptions_SecurityException $ex)
         {
             if ($this->log !== null)
             {
@@ -319,7 +329,7 @@ class iDEALConnector
             $this->log->logRequest($request);
         }
 
-        if(!is_null($this->configuration->getProxy()))
+        if (!is_null($this->configuration->getProxy()))
         {
             $response = iDEALConnector_Http_WebRequest::post($url, $request, $this->configuration->getProxy());
         }

@@ -13,12 +13,12 @@ class iDEALConnector_Entities_Issuer
      */
     public function __construct($id, $name)
     {
-        if(!is_string($id))
+        if (!is_string($id))
         {
             throw new InvalidArgumentException('Parameter \'id\' must be of type string.');
         }
 
-        if(!is_string($name))
+        if (!is_string($name))
         {
             throw new InvalidArgumentException('Parameter \'name\' must be of type string.');
         }
