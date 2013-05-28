@@ -54,6 +54,12 @@ class iDEALConnector_Log_DefaultLog implements iDEALConnector_Log_IConnectorLog
 
     private function log($message, $value)
     {
+        // Supress any direct logging
+        if (empty($this->logPath))
+        {
+            return $this;
+        }
+
         $now = new DateTime();
 
         file_put_contents($this->logPath, $now->format('Y-m-d H:i:s') .' '. $message ."\n". serialize($value) ."\n\n", FILE_APPEND);

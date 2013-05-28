@@ -59,7 +59,7 @@ class iDEALConnector_Xml_XmlSecurity
 
     private function getFingerprint($path)
     {
-        $contents = file_get_contents(__DIR__ .'/'. $path);
+        $contents = file_get_contents(realpath($_SERVER['DOCUMENT_ROOT']) .'/'. $path);
 
         if ($contents === null)
         {

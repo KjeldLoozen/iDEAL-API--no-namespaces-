@@ -366,7 +366,7 @@ class XMLSecurityKey {
 
     public function loadKey($key, $isFile=FALSE, $isCert = FALSE) {
         if ($isFile) {
-            $this->key = file_get_contents(__DIR__ .'/'. $key);
+            $this->key = file_get_contents(realpath($_SERVER['DOCUMENT_ROOT']) .'/'. $key);
         } else {
             $this->key = $key;
         }

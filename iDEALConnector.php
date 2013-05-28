@@ -329,7 +329,7 @@ class iDEALConnector
             $this->log->logRequest($request);
         }
 
-        if (!is_null($this->configuration->getProxy()))
+        if ($this->configuration->getProxy() !== null)
         {
             $response = iDEALConnector_Http_WebRequest::post($url, $request, $this->configuration->getProxy());
         }

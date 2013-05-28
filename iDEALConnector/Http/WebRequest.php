@@ -23,9 +23,9 @@ class iDEALConnector_Http_WebRequest
         if (isset($proxy))
         {
             $idx  = strrpos($proxy, ':');
-            $host = substr($proxy, 0, $idx);
-            $idx  = strpos($proxy, ':');
-            $port = substr($proxy, $idx + 1);
+            $host = substr( $proxy, 0, $idx);
+            $idx  = strpos( $proxy, ':');
+            $port = substr( $proxy, $idx + 1);
 
             curl_setopt($request, CURLOPT_PROXY, $host);
             curl_setopt($request, CURLOPT_PROXYPORT, $port);
@@ -33,11 +33,10 @@ class iDEALConnector_Http_WebRequest
 
         $output = curl_exec($request);
         $error  = curl_error($request);
-            die(var_dump($error, $output));
 
         if (!empty($error))
         {
-            throw new iDEALConnector_Exceptions_iDEALException($error);
+            throw new iDEALConnector_Exceptions_ConnectorException($error);
         }
 
         curl_close($request);
