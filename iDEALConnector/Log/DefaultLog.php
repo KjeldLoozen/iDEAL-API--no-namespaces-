@@ -52,16 +52,23 @@ class iDEALConnector_Log_DefaultLog implements iDEALConnector_Log_IConnectorLog
         $this->log('Exception', $exception);
     }
 
+    /**
+     * Log a message and value to a log file
+     *
+     * @param string $message
+     * @param mixed $value
+     * @return iDEALConnector_Log_DefaultLog
+     */
     private function log($message, $value)
     {
-        // Supress any direct logging
+        // Supress any direct logging, if no logPath defined
         if (empty($this->logPath))
         {
             return $this;
         }
 
-        $now = new DateTime();
+        @file_put_contents($this->logPath, '['. date('Y-m-d H:i:s') .'] '. $message ."\n". serialize($value) ."\n\n", FILE_APPEND);
 
-        file_put_contents($this->logPath, $now->format('Y-m-d H:i:s') .' '. $message ."\n". serialize($value) ."\n\n", FILE_APPEND);
+        return $this;
     }
 }
